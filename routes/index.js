@@ -23,7 +23,10 @@ router.post('/send-mail', (req, res) => {
         }
     });
 
-    var emails = ['ahmad.mahmud1997@gmail.com', 'mahma3@unh.newhaven.edu'];
+    var emails = ['ahmad.mahmud1997@gmail.com', 'mahma3@unh.newhaven.edu',
+        'msarraf@newhaven.edu', 'bkarimi@newhaven.edu',
+        'rkoll2@unh.newhaven.edu'
+    ];
 
     //for (var i = 0; i < emails.length; i++) {
     //var email = emails[i];
@@ -33,7 +36,7 @@ router.post('/send-mail', (req, res) => {
         from: 'Mahmud <mahmud.ahmad.SafteyEarmuff@gmail.com>', // sender address (who sends)
         to: emails, // list of receivers (who receives)
         subject: "Signal found", // Subject line
-        text: '',
+        text: "A XHz signal was found! Also, Gal Gadot is Hot.",
         html: '',
     };
 
