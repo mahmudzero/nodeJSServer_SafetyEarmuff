@@ -18,8 +18,8 @@ router.post('/send-mail', (req, res) => {
         port: 465,
         secure: true, // use SSL
         auth: {
-            user: '-',
-            pass: '-',
+            user: 'mahmud.ahmad.SafteyEarmuff@gmail.com',
+            pass: 'elec4457',
         }
     });
 
@@ -30,7 +30,7 @@ router.post('/send-mail', (req, res) => {
 
         // setup e-mail data
         var mailOptions = {
-            from: 'Mahmud <ahmad.mahmud1997@gmail.com>', // sender address (who sends)
+            from: 'Mahmud <mahmud.ahmad.SafteyEarmuff@gmail.com>', // sender address (who sends)
             to: email, // list of receivers (who receives)
             subject: "Signal found", // Subject line
             text: '',
