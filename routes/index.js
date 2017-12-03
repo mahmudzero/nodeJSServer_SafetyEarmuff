@@ -23,33 +23,33 @@ router.post('/send-mail', (req, res) => {
         }
     });
 
-    var emails = ['abdul.ahmad@therapyhubapp.com', 'mahma3@unh.newhaven.edu'];
+    var emails = ['ahmad.mahmud1997@gmail.com', 'mahma3@unh.newhaven.edu'];
 
-    for (var i = 0; i < emails.length; i++) {
-        var email = emails[i];
+    //for (var i = 0; i < emails.length; i++) {
+    //var email = emails[i];
 
-        // setup e-mail data
-        var mailOptions = {
-            from: 'Mahmud <mahmud.ahmad.SafteyEarmuff@gmail.com>', // sender address (who sends)
-            to: email, // list of receivers (who receives)
-            subject: "Signal found", // Subject line
-            text: '',
-            html: '',
-        };
+    // setup e-mail data
+    var mailOptions = {
+        from: 'Mahmud <mahmud.ahmad.SafteyEarmuff@gmail.com>', // sender address (who sends)
+        to: emails, // list of receivers (who receives)
+        subject: "Signal found", // Subject line
+        text: '',
+        html: '',
+    };
 
-        // send mail with defined transport object
-        transporter.sendMail(mailOptions, function(error, info) {
-            if (error) {
-                console.log(error);
-                var responseData = { message: 'fail' };
-                if (error.rejected && error.rejected.length > 0) responseData.error = 'rejected';
-                // res.json(responseData);
-                return;
-            }
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, function(error, info) {
+        if (error) {
+            console.log(error);
+            var responseData = { message: 'fail' };
+            if (error.rejected && error.rejected.length > 0) responseData.error = 'rejected';
+            // res.json(responseData);
+            return;
+        }
 
-            console.log('Message sent: ' + info.response);
-        });
-    }
+        console.log('Message sent: ' + info.response);
+    });
+    //}
 
     res.json({ message: 'success' });
 });
