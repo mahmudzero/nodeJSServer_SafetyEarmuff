@@ -18,7 +18,7 @@ router.post('/send-mail', (req, res) => {
         port: 465,
         secure: true, // use SSL
         auth: {
-            user: 'mahmud.ahmad.SafteyEarmudd@gmail.com',
+            user: 'mahmud.ahmad.safetyearmudd@gmail.com',
             pass: 'elec4457',
         }
     });
