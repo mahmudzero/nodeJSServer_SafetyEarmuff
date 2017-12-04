@@ -24,7 +24,6 @@ router.post('/send-mail', (req, res) => {
     });
 
     var emails = ['ahmad.mahmud1997@gmail.com', 'mahma3@unh.newhaven.edu',
-        'msarraf@newhaven.edu', 'bkarimi@newhaven.edu',
         'rkoll2@unh.newhaven.edu'
     ];
 
