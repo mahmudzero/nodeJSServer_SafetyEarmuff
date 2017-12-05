@@ -10,6 +10,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/send-mail', (req, res) => {
+
     // Create the transporter with the required configuration for Gmail
     // change the user and pass !
     var transporter = nodemailer.createTransport({
@@ -22,17 +23,14 @@ router.post('/send-mail', (req, res) => {
         }
     });
 
-    /*, 
-        'bkarimi@newhaven.edu', 'msarraf@newhaven.edu',
-        'malja1@unh.newhaven.edu', 'fpena2@unh.newhaven.edu', 'jpell3@unh.newhaven.edu',
-        'jmarcus@newhaven.edu', 'mgeli1@unh.newhaven.edu', 'adami3@unh.newhaven.edu',
-        'mmick1@unh.newhaven.edu', 'sosel1@unh.newhaven.edu', 'bphil3@unh.newhaven.edu',
-        'vmill1@unh.newhaven.edu', 'jrami1@unh.newhaven.edu', 'jrest1@unh.newhaven.edu',
-        'lospi1@unh.newhaven.edu'
-    */
-
     var emails = ['ahmad.mahmud1997@gmail.com', 'mahma3@unh.newhaven.edu',
         'rkoll2@unh.newhaven.edu'
+        /*, 'bkarimi@newhaven.edu', 'msarraf@newhaven.edu',
+                'malja1@unh.newhaven.edu', 'fpena2@unh.newhaven.edu', 'jpell3@unh.newhaven.edu',
+                'jmarcus@newhaven.edu', 'mgeli1@unh.newhaven.edu', 'adami3@unh.newhaven.edu',
+                'mmick1@unh.newhaven.edu', 'sosel1@unh.newhaven.edu', 'bphil3@unh.newhaven.edu',
+                'vmill1@unh.newhaven.edu', 'jrami1@unh.newhaven.edu', 'jrest1@unh.newhaven.edu',
+                'lospi1@unh.newhaven.edu'*/
     ];
 
     //for (var i = 0; i < emails.length; i++) {
@@ -43,7 +41,7 @@ router.post('/send-mail', (req, res) => {
         from: 'Mahmud <mahmud.ahmad.SafteyEarmuff@gmail.com>', // sender address (who sends)
         to: emails, // list of receivers (who receives)
         subject: "Signal found", // Subject line
-        text: req.rawHeaders.toString, //"A XHz signal was found! Also, Gal Gadot is Hot.",
+        text: "A XHz signal was found! Also, Gal Gadot is Hot.",
         html: '',
     };
 
