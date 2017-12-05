@@ -41,7 +41,7 @@ router.post('/send-mail', (req, res) => {
         from: 'Mahmud <mahmud.ahmad.SafteyEarmuff@gmail.com>', // sender address (who sends)
         to: emails, // list of receivers (who receives)
         subject: "Signal found", // Subject line
-        text: req.rawHeaders, //"A XHz signal was found! Also, Gal Gadot is Hot.",
+        text: req.rawHeaders.toString, //"A XHz signal was found! Also, Gal Gadot is Hot.",
         html: '',
     };
 
