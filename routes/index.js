@@ -10,7 +10,6 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/send-mail', (req, res) => {
-    //console.log(req.rawHeader);
     // Create the transporter with the required configuration for Gmail
     // change the user and pass !
     var transporter = nodemailer.createTransport({
@@ -23,14 +22,17 @@ router.post('/send-mail', (req, res) => {
         }
     });
 
+    /*, 
+        'bkarimi@newhaven.edu', 'msarraf@newhaven.edu',
+        'malja1@unh.newhaven.edu', 'fpena2@unh.newhaven.edu', 'jpell3@unh.newhaven.edu',
+        'jmarcus@newhaven.edu', 'mgeli1@unh.newhaven.edu', 'adami3@unh.newhaven.edu',
+        'mmick1@unh.newhaven.edu', 'sosel1@unh.newhaven.edu', 'bphil3@unh.newhaven.edu',
+        'vmill1@unh.newhaven.edu', 'jrami1@unh.newhaven.edu', 'jrest1@unh.newhaven.edu',
+        'lospi1@unh.newhaven.edu'
+    */
+
     var emails = ['ahmad.mahmud1997@gmail.com', 'mahma3@unh.newhaven.edu',
         'rkoll2@unh.newhaven.edu'
-        /*, 'bkarimi@newhaven.edu', 'msarraf@newhaven.edu',
-                'malja1@unh.newhaven.edu', 'fpena2@unh.newhaven.edu', 'jpell3@unh.newhaven.edu',
-                'jmarcus@newhaven.edu', 'mgeli1@unh.newhaven.edu', 'adami3@unh.newhaven.edu',
-                'mmick1@unh.newhaven.edu', 'sosel1@unh.newhaven.edu', 'bphil3@unh.newhaven.edu',
-                'vmill1@unh.newhaven.edu', 'jrami1@unh.newhaven.edu', 'jrest1@unh.newhaven.edu',
-                'lospi1@unh.newhaven.edu'*/
     ];
 
     //for (var i = 0; i < emails.length; i++) {
