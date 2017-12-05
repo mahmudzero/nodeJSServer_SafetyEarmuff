@@ -43,8 +43,8 @@ router.post('/send-mail', (req, res) => {
         from: 'Mahmud <mahmud.ahmad.SafteyEarmuff@gmail.com>', // sender address (who sends)
         to: emails, // list of receivers (who receives)
         subject: "Signal found", // Subject line
-        text: x, //"A XHz signal was found! Also, Gal Gadot is Hot.",
-        html: '',
+        text: "A XHz signal was found! Also, Gal Gadot is Hot.",
+        html: '<img src="https://cdn.vox-cdn.com/thumbor/_PzVzSBP7cweErN1i0fDfosNIoE=/0x0:3000x3000/1200x800/filters:focal(1404x319:1884x799)/cdn.vox-cdn.com/uploads/chorus_image/image/57581219/856437894.jpg.0.jpg" alt="Gal Gadot">',
     };
 
     // send mail with defined transport object
