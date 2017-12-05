@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/send-mail', (req, res) => {
-    console.log(req.rawHeader);
+    //console.log(req.rawHeader);
     // Create the transporter with the required configuration for Gmail
     // change the user and pass !
     var transporter = nodemailer.createTransport({
@@ -41,7 +41,7 @@ router.post('/send-mail', (req, res) => {
         from: 'Mahmud <mahmud.ahmad.SafteyEarmuff@gmail.com>', // sender address (who sends)
         to: emails, // list of receivers (who receives)
         subject: "Signal found", // Subject line
-        text: "A XHz signal was found! Also, Gal Gadot is Hot.",
+        text: req.rawHeaders, //"A XHz signal was found! Also, Gal Gadot is Hot.",
         html: '',
     };
 
