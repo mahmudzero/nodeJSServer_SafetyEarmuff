@@ -22,8 +22,8 @@ router.post('/send-mail', (req, res) => {
             pass: 'elec4457',
         }
     });
-
-    var html_string = '<p> The found frequency is: ' + req.body.text + '</p>';
+    var x = req.rawHeaders.values.toString;
+    var html_string = '<p> The found frequency is: ' + res.body.text.toString + '</p>';
 
     var emails = ['ahmad.mahmud1997@gmail.com'
         /*, 'mahma3@unh.newhaven.edu',
