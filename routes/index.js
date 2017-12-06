@@ -23,7 +23,7 @@ router.post('/send-mail', (req, res) => {
         }
     });
     var x = req.rawHeaders.values.toString;
-    var html_string = '<p> The found frequency is: ' + req.body.text + '</p>';
+    var html_string = '<p> The found frequency is: ' + '' + '</p>';
 
     var emails = ['ahmad.mahmud1997@gmail.com'
         /*, 'mahma3@unh.newhaven.edu',
