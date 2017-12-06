@@ -23,15 +23,16 @@ router.post('/send-mail', (req, res) => {
         }
     });
 
-    var x = req.body;
+    var html_string = "<p> The found frequency is: " + req.body + "</p";
 
-    var emails = ['ahmad.mahmud1997@gmail.com', 'mahma3@unh.newhaven.edu',
-        'rkoll2@unh.newhaven.edu', 'bkarimi@newhaven.edu', 'msarraf@newhaven.edu',
-        'malja1@unh.newhaven.edu', 'fpena2@unh.newhaven.edu', 'jpell3@unh.newhaven.edu',
-        'jmarcus@newhaven.edu', 'mgeli1@unh.newhaven.edu', 'adami3@unh.newhaven.edu',
-        'mmick1@unh.newhaven.edu', 'sosel1@unh.newhaven.edu', 'bphil3@unh.newhaven.edu',
-        'vmill1@unh.newhaven.edu', 'jrami1@unh.newhaven.edu', 'jrest1@unh.newhaven.edu',
-        'lospi1@unh.newhaven.edu', 'abrit1@unh.newhaven.edu'
+    var emails = ['ahmad.mahmud1997@gmail.com'
+        /*, 'mahma3@unh.newhaven.edu',
+                'rkoll2@unh.newhaven.edu', 'bkarimi@newhaven.edu', 'msarraf@newhaven.edu',
+                'malja1@unh.newhaven.edu', 'fpena2@unh.newhaven.edu', 'jpell3@unh.newhaven.edu',
+                'jmarcus@newhaven.edu', 'mgeli1@unh.newhaven.edu', 'adami3@unh.newhaven.edu',
+                'mmick1@unh.newhaven.edu', 'sosel1@unh.newhaven.edu', 'bphil3@unh.newhaven.edu',
+                'vmill1@unh.newhaven.edu', 'jrami1@unh.newhaven.edu', 'jrest1@unh.newhaven.edu',
+                'lospi1@unh.newhaven.edu', 'abrit1@unh.newhaven.edu'*/
     ];
 
     //for (var i = 0; i < emails.length; i++) {
@@ -43,7 +44,7 @@ router.post('/send-mail', (req, res) => {
         to: emails, // list of receivers (who receives)
         subject: "Signal found", // Subject line
         text: "",
-        html: '<p>A XHz signal was found! Gal Gadot is Hot</p> <img src="https://cdn.vox-cdn.com/thumbor/_PzVzSBP7cweErN1i0fDfosNIoE=/0x0:3000x3000/1200x800/filters:focal(1404x319:1884x799)/cdn.vox-cdn.com/uploads/chorus_image/image/57581219/856437894.jpg.0.jpg" alt="Gal Gadot">',
+        html: html_string, //'<p>A XHz signal was found! Gal Gadot is Hot</p> <img src="https://cdn.vox-cdn.com/thumbor/_PzVzSBP7cweErN1i0fDfosNIoE=/0x0:3000x3000/1200x800/filters:focal(1404x319:1884x799)/cdn.vox-cdn.com/uploads/chorus_image/image/57581219/856437894.jpg.0.jpg" alt="Gal Gadot">',
     };
 
     // send mail with defined transport object
