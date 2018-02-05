@@ -2,6 +2,66 @@ var express = require('express');
 var router = express.Router();
 var path = require('path');
 var nodemailer = require('nodemailer');
+const apn = require('apn');
+
+
+/* 
+    APN code, uesd to setup and send a notification
+*/
+let options = {
+    token: {
+        //apple .cert file, turned into .p8
+        key: "aps.p8",
+        //my keyId?
+        keId: "X3H5KQKUPZ",
+        //my teamId? from developer.apple.com, go to membership tab
+        teamId: "MGCJP7HRV3"
+    },
+    production: false
+}
+
+let apnProvider = new apn.Provider(options);
+
+//device token for phone, this is ideally stored in a database,
+//since each phone has a different device token. Just gonnna use the
+//one for my phone for now.
+let deviceToken = "";
+
+
+//setting up the notification and its parameters
+let notification = new apn.Notification();
+notification.expiry = Math.floor(Date.now() / 1000) + (24 * 3600); //will expire in 25hrs
+notification.badge = 2;
+notification.sound = "ping.aiff";
+notification.alert = "Hey you got a notification!";
+notification.payload = {'messageFrom' : 'Mahmud Ahmad'};
+
+//app bundle id
+notification.topic = "com.mahmudahmad.Safety-Earmuff";
+
+//send the actual notificaiton using this function
+
+/*
+    apnProvider.send(notification, devToken).then(result => {
+        console.log(result);
+    });
+*/
+
+//close notifications server
+//apnProvider.shutdown();
+
+function sendNotification() {
+    apnProvider.send(notification, devToken).then(result => {
+        console.log(result);
+    });
+    apnProvider.shutdown();
+}
+/*
+    END of APN code
+*/
+
+
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
