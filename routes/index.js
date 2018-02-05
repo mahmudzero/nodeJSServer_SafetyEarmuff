@@ -13,12 +13,12 @@ let options = {
         //apple .cert file, turned into .p8
         key: "aps.p8",
         //my keyId?
-        keId: "X3H5KQKUPZ",
+        keyId: "X3H5KQKUPZ",
         //my teamId? from developer.apple.com, go to membership tab
         teamId: "MGCJP7HRV3"
     },
     production: false
-}
+};
 
 let apnProvider = new apn.Provider(options);
 
