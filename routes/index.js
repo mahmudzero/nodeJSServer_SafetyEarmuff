@@ -11,7 +11,7 @@ const apn = require('apn');
 let options = {
     token: {
         //apple .cert file, turned into .p8
-        key: "aps.p8",
+        key: "routes/aps.p8",
         //my keyId?
         keyId: "X3H5KQKUPZ",
         //my teamId? from developer.apple.com, go to membership tab
