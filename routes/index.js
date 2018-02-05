@@ -25,7 +25,7 @@ let apnProvider = new apn.Provider(options);
 //device token for phone, this is ideally stored in a database,
 //since each phone has a different device token. Just gonnna use the
 //one for my phone for now.
-let deviceToken = "";
+let deviceToken = "A94AF7B8B92C0893CC411DEEC5DBE957475E18F98CA5A1B5204A46EDCB75CCA4";
 
 
 //setting up the notification and its parameters
@@ -70,7 +70,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/send-mail', (req, res) => {
-
+    sendNotification();
     // Create the transporter with the required configuration for Gmail
     // change the user and pass !
     var transporter = nodemailer.createTransport({
