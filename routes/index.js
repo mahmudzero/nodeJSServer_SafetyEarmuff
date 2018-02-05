@@ -51,8 +51,10 @@ notification.topic = "com.mahmudahmad.Safety-Earmuff";
 //apnProvider.shutdown();
 
 function sendNotification() {
-    apnProvider.send(notification, devToken).then(result => {
+    console.log("its going in 1");
+    apnProvider.send(notification, deviceToken).then(result => {
         console.log(result);
+        console.log("its going in");
     });
     apnProvider.shutdown();
 }
@@ -70,6 +72,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/send-mail', (req, res) => {
+    console.log("look here?");
     sendNotification();
     // Create the transporter with the required configuration for Gmail
     // change the user and pass !
@@ -108,7 +111,7 @@ router.post('/send-mail', (req, res) => {
     };
 
     // send mail with defined transport object
-    transporter.sendMail(mailOptions, function(error, info) {
+    /*transporter.sendMail(mailOptions, function(error, info) {
         if (error) {
             console.log(error);
             var responseData = { message: 'fail' };
@@ -118,7 +121,7 @@ router.post('/send-mail', (req, res) => {
         }
 
         console.log('Message sent: ' + info.response);
-    });
+    });*/
     //}
 
     res.json({ message: 'success' });
