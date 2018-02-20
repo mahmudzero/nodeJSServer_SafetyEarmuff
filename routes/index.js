@@ -12,7 +12,8 @@ let options = {
     token: {
         //apple .cert file, turned into .p8
         key: "routes/aps.p8",
-        //my keyId?
+        //my keyId?, gotten from the 'keys' tab under the certificates tab in
+        //developer.apple.com
         keyId: "X3H5KQKUPZ",
         //my teamId? from developer.apple.com, go to membership tab
         teamId: "MGCJP7HRV3"
@@ -33,7 +34,7 @@ let notification = new apn.Notification();
 notification.expiry = Math.floor(Date.now() / 1000) + (24 * 3600); //will expire in 25hrs
 notification.badge = 2;
 notification.sound = "ping.aiff";
-notification.alert = "Hey you got a notification!";
+notification.alert = "ALERT! The target frequency was detected!";
 notification.payload = {'messageFrom' : 'Mahmud Ahmad'};
 
 //app bundle id
