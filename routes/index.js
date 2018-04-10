@@ -26,7 +26,7 @@ let apnProvider = new apn.Provider(options);
 //device token for phone, this is ideally stored in a database,
 //since each phone has a different device token. Just gonnna use the
 //one for my phone for now.
-let deviceToken = "A94AF7B8B92C0893CC411DEEC5DBE957475E18F98CA5A1B5204A46EDCB75CCA4";
+let deviceToken = "1B223E64145BEB7D0F70AB052C66F3062EFFF06BF3DEA68E314CAA179656D466";
 
 
 //setting up the notification and its parameters
