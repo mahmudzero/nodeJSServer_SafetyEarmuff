@@ -35,7 +35,7 @@ notification.expiry = Math.floor(Date.now() / 1000) + (24 * 3600); //will expire
 notification.badge = 2;
 notification.sound = "ping.aiff";
 notification.alert = "ALERT! The target frequency was detected!";
-notification.payload = {'messageFrom' : 'Mahmud Ahmad'};
+notification.payload = {"aps": {'messageFrom' : 'Mahmud Ahmad', "badge": "+1", "content-available": "1"} };
 
 //app bundle id
 notification.topic = "com.mahmudahmad.Safety-Earmuff";
