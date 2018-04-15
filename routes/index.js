@@ -1,3 +1,5 @@
+import { NPN_ENABLED } from 'constants';
+
 var express = require('express');
 var router = express.Router();
 var path = require('path');
@@ -32,11 +34,21 @@ let deviceToken = "1B223E64145BEB7D0F70AB052C66F3062EFFF06BF3DEA68E314CAA179656D
 //setting up the notification and its parameters
 let notification = new apn.Notification();
 notification.expiry = Math.floor(Date.now() / 1000) + (24 * 3600); //will expire in 25hrs
-notification.badge = 0;
-notification.sound = "ping.aiff";
-notification.alert = "ALERT! The target frequency was detected!";
-notification.contentAvailable = 1;
-notification.payload = {aps: {messageFrom : 'Mahmud Ahmad', badge: "+1", "content-available": "1"} };
+notification.rawPayload = {
+    from: "node-apn",
+    source: "web",
+    aps: {
+        badge: "+1",
+        sound: "ping.aiff",
+        "content-available": 1,
+        alert: "blah blah"
+    }
+};
+// notification.badge = 0;
+// notification.sound = "ping.aiff";
+// notification.alert = "ALERT! The target frequency was detected!";
+// notification.contentAvailable = 1;
+// notification.payload = {aps: {messageFrom : 'Mahmud Ahmad', badge: "+1", "content-available": "1"} };
 
 //app bundle id
 notification.topic = "com.mahmudahmad.Safety-Earmuff";
