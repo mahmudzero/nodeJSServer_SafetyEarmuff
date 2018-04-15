@@ -36,7 +36,7 @@ notification.badge = 0;
 notification.sound = "ping.aiff";
 notification.alert = "ALERT! The target frequency was detected!";
 notification.contentAvailable = 1;
-//notification.payload = {"aps": {'messageFrom' : 'Mahmud Ahmad', "badge": "+1", "content-available": "1"} };
+notification.payload = {aps: {messageFrom : 'Mahmud Ahmad', badge: "+1", "content-available": "1"} };
 
 //app bundle id
 notification.topic = "com.mahmudahmad.Safety-Earmuff";
