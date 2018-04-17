@@ -36,7 +36,7 @@ let notification = new apn.Notification();
 notification.rawPayload = {
     from: "node-apn",
     source: "web",
-    aps: {
+    aps = {
         badge: "+1",
         sound: "ping.aiff",
         "content-available": 1,
