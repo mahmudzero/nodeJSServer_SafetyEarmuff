@@ -66,16 +66,17 @@ notification.topic = "com.mahmudahmad.Safety-Earmuff";
 //apnProvider.shutdown();
 
 function sendNotification() {
-    if(notification.badge == 1) {
+    notificationBadge = 0;
+    if(notificationBadge == 1) {
         notification.badge = 0;
-    } else if(notification.badge == 0) {
+    } else if(notificationBadge == 0) {
         notification.badge = 1;
     } else {
         notification.badge = 0;
     }
 
-    console.log(notification.badge);
-    console.log(notification.sound);
+    // console.log(notification.badge);
+    // console.log(notification.sound);
     console.log("its going in 1");
     apnProvider.send(notification, deviceToken).then(result => {
         console.log(result);
