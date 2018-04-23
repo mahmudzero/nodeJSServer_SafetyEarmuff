@@ -54,6 +54,8 @@ notification.payload = {};
 //app bundle id
 notification.topic = "com.mahmudahmad.Safety-Earmuff";
 
+notificationBadge = 0;
+
 //send the actual notificaiton using this function
 
 /*
@@ -66,18 +68,18 @@ notification.topic = "com.mahmudahmad.Safety-Earmuff";
 //apnProvider.shutdown();
 
 function sendNotification() {
-    notificationBadge = 0;
-    if(notificationBadge === 1) {
-        notification.badge = 0;
-        notificationBadge = 0;
-    } else if(notificationBadge === 0) {
+
+    if(notificationBadge == 0) {
         notification.badge = 1;
         notificationBadge = 1;
+    } else if(notificationBadge == 1) {
+        notification.badge = 0;
+        notificationBadge = 0;
     } else {
+        notificationBadge = 0;
         notification.badge = 0;
     }
 
-    console.log(notificationBadge);
 
     console.log("its going in 1");
     apnProvider.send(notification, deviceToken).then(result => {
