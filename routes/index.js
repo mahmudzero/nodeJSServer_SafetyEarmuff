@@ -77,8 +77,8 @@ function sendNotification() {
         notification.badge = 0;
     }
 
-    // console.log(notification.badge);
-    // console.log(notification.sound);
+    console.log(notificationBadge);
+
     console.log("its going in 1");
     apnProvider.send(notification, deviceToken).then(result => {
         console.log(result);
