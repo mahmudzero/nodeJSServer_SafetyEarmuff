@@ -67,11 +67,11 @@ notification.topic = "com.mahmudahmad.Safety-Earmuff";
 
 function sendNotification() {
     if(notification.badge == 1) {
-        notification.badge = -1;
-    } else if(notification.badge == -1) {
+        notification.badge = 0;
+    } else if(notification.badge == 0) {
         notification.badge = 1;
     } else {
-        notification.badge = 1;
+        notification.badge = 0;
     }
     console.log("its going in 1");
     apnProvider.send(notification, deviceToken).then(result => {
