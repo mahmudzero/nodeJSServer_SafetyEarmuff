@@ -67,10 +67,10 @@ notification.topic = "com.mahmudahmad.Safety-Earmuff";
 
 function sendNotification() {
     notificationBadge = 0;
-    if(notificationBadge == 1) {
+    if(notificationBadge === 1) {
         notification.badge = 0;
         notificationBadge = 0;
-    } else if(notificationBadge == 0) {
+    } else if(notificationBadge === 0) {
         notification.badge = 1;
         notificationBadge = 1;
     } else {
