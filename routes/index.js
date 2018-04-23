@@ -4,6 +4,7 @@ var express = require('express');
 var router = express.Router();
 var path = require('path');
 var nodemailer = require('nodemailer');
+//var bodyParser = require('body-parser');
 const apn = require('apn');
 
 
@@ -44,7 +45,7 @@ let notification = new apn.Notification();
 //     }
 // };
 notification.expiry = Math.floor(Date.now() / 1000) + (24 * 3600); //will expire in 25hrs
-notification.badge = 0;
+//notification.badge = 0;
 notification.sound = "ping.aiff";
 notification.alert = "ALERT! The target frequency was detected!";
 notification.contentAvailable = 1;
@@ -65,6 +66,13 @@ notification.topic = "com.mahmudahmad.Safety-Earmuff";
 //apnProvider.shutdown();
 
 function sendNotification() {
+    if(notification.badge == 1) {
+        notification.badge = -1;
+    } else if(notification.badge == -1) {
+        notification.badge = 1;
+    } else {
+        notification.badge = 1;
+    }
     console.log("its going in 1");
     apnProvider.send(notification, deviceToken).then(result => {
         console.log(result);
