@@ -8,6 +8,8 @@ var nodemailer = require('nodemailer');
 const apn = require('apn');
 
 
+console.log("everything is reinitialized...");
+
 /* 
     APN code, uesd to setup and send a notification
 */
@@ -81,10 +83,8 @@ function sendNotification() {
     }
 
 
-    console.log("its going in 1");
     apnProvider.send(notification, deviceToken).then(result => {
         console.log(result);
-        console.log("its going in");
     });
     apnProvider.shutdown();
 }
@@ -102,7 +102,6 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/send-mail', (req, res) => {
-    console.log("look here?");
     sendNotification();
     // Create the transporter with the required configuration for Gmail
     // change the user and pass !
